@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { ParticleBackground } from "@/components/ui/ParticleBackground";
@@ -8,8 +9,19 @@ import { GradientButton } from "@/components/ui/GradientButton";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-animated noise-overlay">
-      <ParticleBackground />
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+<div className="absolute inset-0">
+  <Image
+    src="/images/gat-campus.jpeg"
+    alt="GAT Campus"
+    fill
+    priority
+    className="object-cover"
+  />
+
+  <div className="absolute inset-0 bg-black/60" />
+</div>
+<ParticleBackground />
       <div className="relative z-10 mx-auto max-w-7xl px-4 py-32 text-center md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
