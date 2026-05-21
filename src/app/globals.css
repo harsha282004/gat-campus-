@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 5%;
+    --foreground: 220 60% 96%;
+    --card: 222 47% 8%;
+    --card-foreground: 220 60% 96%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 220 60% 96%;
+    --primary: 45 93% 58%;
+    --primary-foreground: 222 47% 5%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 220 60% 96%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 25% 65%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 220 60% 96%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 30% 20%;
+    --input: 217 33% 17%;
+    --ring: 45 93% 58%;
+    --radius: 0.75rem;
+
+    --bg-deepest: #050d1a;
+    --bg-card: rgba(13, 31, 60, 0.6);
+    --border-gold: rgba(245, 200, 66, 0.15);
+    --text-primary: #f0f4ff;
+    --text-secondary: #8899bb;
+    --gold: #f5c842;
+    --electric-blue: #3b82f6;
+    --success: #10b981;
+    --gradient-1: linear-gradient(135deg, #0a1628 0%, #0d2547 50%, #1a1060 100%);
+    --gradient-2: linear-gradient(135deg, #f5c842 0%, #f97316 100%);
+    --gradient-3: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-navy-950 font-poppins text-[#f0f4ff] antialiased;
+    background-color: var(--bg-deepest);
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .glass-navy {
+    background: rgba(10, 22, 40, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(245, 200, 66, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-2);
+  }
+
+  .gradient-text-blue {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-3);
+  }
+
+  .bg-animated {
+    background: linear-gradient(
+      -45deg,
+      #0a1628,
+      #0d2547,
+      #1a1060,
+      #112952,
+      #0a1628
+    );
+    background-size: 400% 400%;
+    animation: gradient-shift 12s ease infinite;
+  }
+
+  .noise-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: rgba(10, 22, 40, 0.5);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(245, 200, 66, 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 200, 66, 0.5);
+  }
+}
