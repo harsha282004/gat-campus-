@@ -19,10 +19,14 @@ export function CampusHighlights() {
         <div className="grid gap-6 md:grid-cols-3">
           {highlights.map((h, i) => (
             <ScrollReveal key={h.title} delay={i * 0.1}>
-              <Link href={h.href} className="glass-navy block rounded-2xl p-6 transition-all hover:-translate-y-1 hover:shadow-glow">
+              <Link href={h.href} className="block rounded-2xl bg-[#13295b] p-6 border border-[#2b4375] shadow-xl transition-all hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl">
                 <h.icon className="mb-4 h-10 w-10 text-gold-400" />
-                <h3 className="font-semibold text-white">{h.title}</h3>
-                <p className="mt-2 text-sm text-[#8899bb]">{h.desc}</p>
+                <h3 className="font-semibold text-white">
+  {h.title}
+</h3>
+                <p className="mt-2 text-sm text-[#dbe4ff]">
+  {h.desc}
+</p>
               </Link>
             </ScrollReveal>
           ))}

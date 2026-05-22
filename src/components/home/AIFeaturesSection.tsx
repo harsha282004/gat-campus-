@@ -16,10 +16,17 @@ export function AIFeaturesSection() {
             const Icon = getIcon(feature.icon);
             return (
               <ScrollReveal key={feature.title} delay={i * 0.05}>
-                <GlassCard hover className="h-full">
+                <GlassCard
+  hover
+  className="h-full bg-[#13295b] border border-[#1e3a8a] shadow-xl"
+>
                   <Icon className="mb-4 h-10 w-10 text-gold-400" />
-                  <h3 className="font-semibold text-white">{feature.title}</h3>
-                  <p className="mt-2 text-sm text-[#8899bb]">{feature.description}</p>
+                  <h3 className="font-semibold text-gold-300 text-xl">
+  {feature.title}
+</h3>
+                 <p className="mt-2 text-sm text-gold-100">
+  {feature.description}
+</p>
                 </GlassCard>
               </ScrollReveal>
             );

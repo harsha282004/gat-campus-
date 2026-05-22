@@ -3,12 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { LayoutDashboard, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { GradientButton } from "@/components/ui/GradientButton";
 import { MobileMenu } from "./MobileMenu";
+import Image from "next/image";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -27,16 +26,20 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
-        scrolled ? "border-b border-white/10 bg-navy-950/80 shadow-lg backdrop-blur-xl" : "bg-transparent"
+        scrolled ? "border-b border-gray-200 bg-white/90 shadow-md backdrop-blur-xl" : "bg-white"
       )}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-6" aria-label="Main navigation">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-gold-gradient font-bold text-navy-950">
-            GAT
-          </span>
-          <span className="hidden font-space-grotesk text-sm font-semibold text-white sm:block">
-            Campus Compass <span className="text-gold-400">AI</span>
+       <Link href="/" className="flex items-center gap-3">
+  <Image
+    src="/images/gat-logo.jpg"
+    alt="GAT Logo"
+    width={45}
+    height={45}
+    className="rounded-lg"
+  />
+          <span className="hidden font-space-grotesk text-sm font-semibold text-[#13295b] sm:block">
+            Campus Tour <span className="text-gold-400">AI</span>
           </span>
         </Link>
 
@@ -46,9 +49,9 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "relative px-3 py-2 text-sm font-medium text-[#8899bb] transition-colors hover:text-white",
-                pathname === link.href && "text-gold-400"
-              )}
+  "relative px-3 py-2 text-sm font-medium text-[#13295b] transition-colors hover:text-[#0f1f47]",
+  pathname === link.href && "text-gold-400"
+)}
             >
               {link.label}
               {pathname === link.href && (
@@ -59,18 +62,8 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-2">
-          {mounted && (
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="hidden rounded-lg p-2 text-[#8899bb] transition-colors hover:bg-white/10 hover:text-white md:flex"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </button>
-          )}
-          <GradientButton href="/dashboard" variant="outline" size="sm" icon={<LayoutDashboard className="h-4 w-4" />} className="hidden md:inline-flex">
-            Dashboard
-          </GradientButton>
+          
+        
           <MobileMenu />
         </div>
       </nav>

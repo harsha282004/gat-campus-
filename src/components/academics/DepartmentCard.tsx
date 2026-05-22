@@ -18,9 +18,15 @@ export function DepartmentCard({ department }: DepartmentCardProps) {
       <h3 className="font-semibold text-white">{department.name}</h3>
       <p className="mt-2 text-sm text-[#8899bb]">Intake: {department.intake} · Faculty: {department.facultyCount}</p>
       {department.accreditation && (
-        <Badge className="mt-3" variant="outline">{department.accreditation} Accredited</Badge>
+        <Badge
+  className="mt-3 border border-[#f5c842] bg-[#1b3570] px-3 py-1 text-[#f5c842]"
+>
+  {department.accreditation} Accredited
+</Badge>
       )}
-      <Button variant="outline" className="mt-4 w-full border-gold-400/30 text-gold-400">Explore</Button>
+      <Button className="mt-4 w-full bg-[#f5c842] font-semibold text-[#13295b] hover:bg-[#ffd95e]">
+  Explore
+</Button>
     </GlassCard>
   );
 }

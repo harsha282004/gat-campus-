@@ -21,7 +21,6 @@ export const SITE = {
 export const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Academics", href: "/academics" },
-  { label: "Facilities", href: "/facilities" },
   { label: "Admissions", href: "/admissions" },
   { label: "AI Assistant", href: "/ai-assistant" },
   { label: "Virtual Tour", href: "/virtual-tour" },
@@ -37,21 +36,19 @@ export const STATS: Stat[] = [
 ];
 
 export const WHY_CHOOSE = [
-  {
-    title: "AI-Powered Guidance",
-    description:
-      "Get instant answers about campus, courses, and facilities with our intelligent assistant.",
-    icon: "Brain",
-    image:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
-  },
+ {
+  title: "AI-Powered Guidance",
+  description:
+    "Get instant answers about campus, courses, and facilities with our intelligent assistant.",
+  icon: "Brain",
+  image: "/images/ai-guidance.jpg",
+},
   {
     title: "Smart Navigation",
     description:
       "Find any building, lab, or facility with turn-by-turn campus navigation.",
     icon: "Navigation",
-    image:
-      "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
+    image: "/images/navigation-support.jpg",
   },
   {
     title: "24/7 Assistant",
@@ -59,7 +56,7 @@ export const WHY_CHOOSE = [
       "Round-the-clock support for admissions, academics, and campus queries.",
     icon: "Clock",
     image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
+      "/images/assistance.jpeg",
   },
   {
     title: "Immersive Tour",
@@ -102,11 +99,7 @@ export const AI_FEATURES: AIFeature[] = [
     description: "Hands-free voice commands for navigation and queries.",
     icon: "Mic",
   },
-  {
-    title: "Personalized Recommendations",
-    description: "Tailored suggestions based on your interests and profile.",
-    icon: "Sparkles",
-  },
+  
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
@@ -221,23 +214,31 @@ export const DEPARTMENTS: Department[] = [
     facultyCount: 24,
     accreditation: "NAAC A+",
   },
+  {
+  name: "Aeronautical Engineering",
+  code: "AERO",
+  intake: 60,
+  hod: "Dr. A. Prakash",
+  established: 2015,
+  facultyCount: 20,
+  accreditation: "NBA",
+},
 ];
 
 export const FACILITIES: Facility[] = [
   {
-    name: "Central Library",
-    description: "State-of-the-art library with digital and physical resources.",
-    image:
-      "https://images.unsplash.com/photo-1521587760476-6c122a7f2022?w=800&q=80",
-    features: ["50,000+ books", "Digital access", "24/7 study zones"],
-  },
-  {
-    name: "Computer Labs",
-    description: "High-performance computing labs for all departments.",
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd953bada4?w=800&q=80",
-    features: ["500+ systems", "24/7 access", "GPU clusters"],
-  },
+  name: "Central Library",
+  description: "State-of-the-art library with digital and physical resources.",
+  image: "/images/central-library.jpeg",
+  features: ["50,000+ books", "Digital access", "24/7 study zones"],
+},
+
+{
+  name: "Computer Labs",
+  description: "High-performance computing labs for all departments.",
+  image: "/images/gat-campus.jpeg",
+  features: ["500+ systems", "24/7 access", "GPU clusters"],
+},
   {
     name: "Boys/Girls Hostel",
     description: "Comfortable residential facilities with modern amenities.",
@@ -392,7 +393,7 @@ export const CAMPUS_LOCATIONS: CampusLocation[] = [
     floor: 0,
     type: "academic",
     image:
-      "https://images.unsplash.com/photo-1521587760476-6c122a7f2022?w=1200&q=80",
+      "/images/central-library.jpeg",
     coordinates: { x: 45, y: 30 },
     nearbyFacilities: ["CSE Block", "Seminar Hall", "Cafeteria"],
   },
@@ -402,7 +403,7 @@ export const CAMPUS_LOCATIONS: CampusLocation[] = [
     floor: 1,
     type: "academic",
     image:
-      "https://images.unsplash.com/photo-1517694712202-14dd953bada4?w=1200&q=80",
+      "/images/gat-campus.jpeg",
     coordinates: { x: 60, y: 45 },
     nearbyFacilities: ["Innovation Lab", "Library", "Admin Office"],
   },
@@ -596,39 +597,33 @@ export const SCHOLARSHIPS: Scholarship[] = [
 
 export const FACULTY = [
   {
-    name: "Dr. R. Venkatesh",
-    designation: "Professor & HOD",
-    specialization: "Distributed Systems",
-    publications: 45,
-    initials: "RV",
+    name: "Dr. R. Rajkumar",
+    designation: "Professor & Head of CSE",
+    initials: "RR",
   },
   {
-    name: "Dr. S. Priya",
-    designation: "Associate Professor",
-    specialization: "Deep Learning",
-    publications: 38,
-    initials: "SP",
+    name: "Dr. Girish Rao Salanke N S",
+    designation: "Professor & Head of AIDS",
+    initials: "GR",
   },
   {
-    name: "Dr. K. Mohan",
+    name: "Dr. Seema B Hegde",
     designation: "Professor",
-    specialization: "Cloud Computing",
-    publications: 52,
-    initials: "KM",
+    specialization: "Computer Science",
+    initials: "SB",
   },
   {
-    name: "Dr. P. Lakshmi",
+    name: "Dr. Shruthi G",
     designation: "Associate Professor",
-    specialization: "VLSI Design",
-    publications: 31,
-    initials: "PL",
+    specialization: "DBMS",
+    initials: "SG",
   },
   {
-    name: "Dr. N. Ramesh",
-    designation: "Professor",
-    specialization: "Structural Engineering",
+    name: "Supriya H S",
+    designation: "Associate Professor",
+    specialization: "Devops",
     publications: 28,
-    initials: "NR",
+    initials: "SU",
   },
   {
     name: "Dr. H. Karthik",
